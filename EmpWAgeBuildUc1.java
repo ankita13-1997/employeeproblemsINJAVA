@@ -6,33 +6,36 @@ public class EmpWAgeBuildUc1 {
 		System.out.println("welcome to wage computation program");
 
 
-              int full=1;
-        int part=2;
-        double check = Math.floor(Math.random()*10)%3;
+              int check = (int) (Math.floor(Math.random()*10)%3);
         System.out.println(check);
         int WagePerHour= 20;
-        int fullDayHour=12;
-        int partDayHour=8;
         
-        if(check==full)
+        int time =0;
+        switch(check)
         {
-        	System.out.println("employee is present");
-        	int salary=WagePerHour*fullDayHour;
-        	System.out.println(salary);
-        }
-        else if(check==part)
-        {
-        	System.out.println("employee is present in part time");
-        	int salary=WagePerHour*partDayHour;
-        	System.out.println(salary);
+        case 1:
+        
+        	System.out.println("employee is present in full time");
         	
-        }
+        	 time=time+12;
+        	break;
         
-        else
-        {
+        case 2:
+        
+        	System.out.println("employee is present in part time");
+        	
+        	time =time+8;
+        	break;
+        
+        
+        default:
+        
         	System.out.println("employee is absent");
         	System.out.println("no salary without work");
-        }
-
+        
+	}
+        int totalsalary=time*WagePerHour;
+        System.out.println("salary per day of u is " +totalsalary);
+  
 }
 }
